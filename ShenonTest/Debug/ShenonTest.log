@@ -1,0 +1,36 @@
+﻿  ShenonTest.cpp
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\ShenonList.cpp(37,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\ShenonList.cpp(39,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\ShenonList.cpp(137,58): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(121,40): warning C4018: <=: несоответствие типов со знаком и без знака
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(120): message : во время компиляции функции-члена класс шаблон "int List<char>::atCount(size_t)"
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\ShenonList.cpp(40): message : выполняется компиляция ссылки на экземпляр шаблон функции "int List<char>::atCount(size_t)"
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\ShenonList.h(6): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "List<char>"
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(130,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(100,40): warning C4018: <=: несоответствие типов со знаком и без знака
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(99): message : во время компиляции функции-члена класс шаблон "T List<T>::at(size_t)"
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(99): message :         with
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(99): message :         [
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(99): message :             T=char
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(99): message :         ]
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(143): message : выполняется компиляция ссылки на экземпляр шаблон функции "T List<T>::at(size_t)"
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(143): message :         with
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(143): message :         [
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(143): message :             T=char
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(143): message :         ]
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(12): message : во время компиляции функции-члена класс шаблон "void List<char>::iterator(List<char>::Node *)"
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\ShenonList.cpp(20): message : выполняется компиляция ссылки на экземпляр шаблон функции "void List<char>::iterator(List<char>::Node *)"
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(109,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(224,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(221): message : во время компиляции функции-члена класс шаблон "void List<char>::set_with_count(size_t,T,int)"
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(221): message :         with
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(221): message :         [
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(221): message :             T=char
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(221): message :         ]
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(145): message : выполняется компиляция ссылки на экземпляр шаблон функции "void List<char>::set_with_count(size_t,T,int)"
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(145): message :         with
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(145): message :         [
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(145): message :             T=char
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\List.cpp(145): message :         ]
+     ╤ючфрхЄё  сшсышюЄхър C:\Users\User\source\repos\AISDLAB2b\Debug\ShenonTest.lib ш юс·хъЄ C:\Users\User\source\repos\AISDLAB2b\Debug\ShenonTest.exp
+  ShenonTest.vcxproj -> C:\Users\User\source\repos\AISDLAB2b\Debug\ShenonTest.dll
