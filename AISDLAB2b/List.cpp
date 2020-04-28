@@ -335,3 +335,48 @@ template<typename T> T List<T>::getData()
 	if (cur != nullptr) return this->cur->data;
 	else return NULL;
 }
+
+template<typename T> void List<T>::qsortRecursive(Node* arr, int size,int left_border) {
+	if (arr == nullptr)
+	{
+		return;
+	}
+	this->iterator(arr);
+	//Указатели в начало и в конец массива
+	int i =  left_border;
+	int j = size - 1;
+
+	//Центральный элемент массива
+
+	int mid = this->atCount(size/2);
+	//Делим массив
+	do {
+		//Пробегаем элементы, ищем те, которые нужно перекинуть в другую часть
+		//В левой части массива пропускаем(оставляем на месте) элементы, которые меньше центрального
+		while (this->atCount(i) < mid) {
+			i++;
+		}
+		//В правой части пропускаем элементы, которые больше центрального
+		while (this->atCount(j) > mid) {
+			j--;
+		}
+
+		//Меняем элементы местами
+		if (i <= j) {
+			swap(i, j);
+			i++;
+			j--;
+		}
+	} while (i <= j);
+
+
+	//Рекурсивные вызовы, если осталось, что сортировать
+	if (j > 0) {
+		//"Левый кусок"
+		qsortRecursive(arr, j + 1,left_border);
+	}
+	if (i < size) {
+		//"Првый кусок"
+		qsortRecursive(arr, size - i,left_border);
+	}
+}

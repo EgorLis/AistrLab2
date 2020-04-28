@@ -72,4 +72,5 @@ public:
 	}
 	void CreateCodes(Node* top, int count);//creating binary codes of symbols
 	T getData();//geting data of elements
+	void qsortRecursive(Node* arr, int size, int left_border); //quick sort
 };

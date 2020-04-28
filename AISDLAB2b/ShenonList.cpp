@@ -5,69 +5,57 @@ void ShenonList::input()
 	char s = 1;
 	for (s = getchar(); s != '\n'; s = getchar())
 	{
-		word.push_back(s);
+		word->push_back(s);
 	}
 	FindSymbols();
 	ListSort();
-	symbols.CreateCodes(symbols.getHead(), symbols.get_size());
+	symbols->CreateCodes(symbols->getHead(), symbols->get_size());
 	coding();
 	decoding();
 }
 void ShenonList::FindSymbols()
 {
-	if (word.get_size() != 0) {
+	if (word->get_size() != 0) {
 		int CountMass[256] = { 0 };
-		word.iterator(word.getHead());
-		while (word.HasNext())
+		word->iterator(word->getHead());
+		while (word->HasNext())
 		{
-			CountMass[word.Next()->data]++;
+			CountMass[word->Next()->data]++;
 		}
 		for (int i = 0; i < 256; i++)
 		{
 			if (CountMass[i] > 0) {
-				symbols.push_with_count(i, CountMass[i]);
+				symbols->push_with_count(i, CountMass[i]);
 			}
 		}
 	}
 }
 void ShenonList::ListSort()
 {
-	if (symbols.get_size() != 0)
-	{
-		for (int i = 0; i < symbols.get_size(); i++) {
-			bool flag = true;
-			for (int j = 0; j < symbols.get_size() - (i + 1); j++) {
-				if (symbols.atCount(j) > symbols.atCount(j + 1)) {
-					flag = false;
-					symbols.swap(j, j + 1);
-				}
-			}
-			if (flag) {
-				break;
-			}
-		}
-	}
-	symbols.reverse();
+	symbols->qsortRecursive(symbols->getHead(), symbols->get_size(), 0);
+	symbols->reverse();
 }
+
+
 void ShenonList::coding()
 {
 	List<bool>* temp;
-	this->word.iterator(this->word.getHead());
-	this->symbols.iterator(this->symbols.getHead());
-	while (this->word.HasNext())
+	this->word->iterator(this->word->getHead());
+	this->symbols->iterator(this->symbols->getHead());
+	while (this->word->HasNext())
 	{
-		while (this->symbols.getData() != this->word.getData())
+		while (this->symbols->getData() != this->word->getData())
 		{
-			this->symbols.Next();
+			this->symbols->Next();
 		}
-		temp = this->symbols.getCode();
+		temp = this->symbols->getCode();
 		temp->iterator(temp->getHead());
 		while (temp->HasNext())
 		{
-			this->encodedWord.push_back(temp->Next()->data);
+			this->encodedWord->push_back(temp->Next()->data);
 		}
-		this->symbols.iterator(this->symbols.getHead());
-		this->word.Next();
+		this->symbols->iterator(this->symbols->getHead());
+		this->word->Next();
 	}
 }
 
@@ -76,16 +64,16 @@ void ShenonList::decoding()
 	List<bool>* temp;
 	int index = 0;
 	int match_index = 0;
-	this->encodedWord.iterator(this->encodedWord.getHead());
-	this->symbols.iterator(this->symbols.getHead());
-	while (match_index != this->encodedWord.get_size())
+	this->encodedWord->iterator(this->encodedWord->getHead());
+	this->symbols->iterator(this->symbols->getHead());
+	while (match_index != this->encodedWord->get_size())
 	{
-		temp = this->symbols.getCode();
+		temp = this->symbols->getCode();
 		temp->iterator(temp->getHead());
 		bool flag = false;
-		while (temp->HasNext() && this->encodedWord.HasNext())
+		while (temp->HasNext() && this->encodedWord->HasNext())
 		{
-			if (this->encodedWord.getData() == temp->getData())
+			if (this->encodedWord->getData() == temp->getData())
 				flag = true;
 			else
 			{
@@ -93,27 +81,27 @@ void ShenonList::decoding()
 				break;
 			}
 			temp->Next();
-			this->encodedWord.Next();
+			this->encodedWord->Next();
 			index++;
 		}
 		if (flag == true)
 		{
-			this->decodedWord.push_back(this->symbols.getData());
+			this->decodedWord->push_back(this->symbols->getData());
 			match_index = index;
-			this->symbols.iterator(this->symbols.getHead());
+			this->symbols->iterator(this->symbols->getHead());
 		}
 		else {
 			index = match_index;
-			if (match_index != this->encodedWord.get_size()) {
-				this->encodedWord.iterator(this->encodedWord.getHead());
+			if (match_index != this->encodedWord->get_size()) {
+				this->encodedWord->iterator(this->encodedWord->getHead());
 				for (int i = 0; i < match_index; i++)
-					this->encodedWord.Next();
+					this->encodedWord->Next();
 
 			}
-			this->symbols.Next();
-			if (this->symbols.HasNext() == false)
+			this->symbols->Next();
+			if (this->symbols->HasNext() == false)
 			{
-				this->symbols.iterator(this->symbols.getHead());
+				this->symbols->iterator(this->symbols->getHead());
 			}
 		}
 	}
@@ -122,18 +110,43 @@ void ShenonList::decoding()
 void ShenonList::print()
 {
 	cout << "Entered word - ";
-	this->word.print_to_console();
+	this->word->print_to_console();
 	cout << endl;
 	cout << "Table of codes";
-	this->symbols.print_to_console_with_code();
+	this->symbols->print_to_console_with_code();
 	cout << endl;
 	cout << "Encoded word - ";
-	this->encodedWord.print_to_console();
+	this->encodedWord->print_to_console();
 	cout << endl;
 	cout << "Decoded word - ";
-	this->decodedWord.print_to_console();
+	this->decodedWord->print_to_console();
 	cout << endl;
 	float compression_ratio;
-	compression_ratio = (this->decodedWord.get_size() * 8.) / (this->encodedWord.get_size() * 1.);
+	compression_ratio = (this->decodedWord->get_size() * 8.) / (this->encodedWord->get_size() * 1.);
 	cout << "compression ratio is equal " << compression_ratio;
 }
+
+void ShenonList::setWord(List<char>* word)
+{
+	this->word = word;
+}
+
+List<char>* ShenonList::getSymbols()
+{
+	return this->symbols;
+}
+void ShenonList::setSymbols(List<char>* symbols)
+{
+	this->symbols = symbols;
+}
+
+List<bool>* ShenonList::get_encodedWord()
+{
+	return this->encodedWord;
+}
+
+List<char>* ShenonList::get_decodedWord()
+{
+	return this->decodedWord;
+}
+

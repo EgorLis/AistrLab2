@@ -1,0 +1,13 @@
+﻿  pch.cpp
+  ShenonTest.cpp
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\ShenonList.cpp(12,62): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\ShenonList.cpp(35,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\AISDLAB2b\AISDLAB2b\ShenonList.cpp(125,59): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\source\repos\AISDLAB2b\ShenonTest\ShenonTest.cpp(25,1): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\AISDLAB2b\ShenonTest\ShenonTest.cpp(55,1): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\AISDLAB2b\ShenonTest\ShenonTest.cpp(94,1): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\AISDLAB2b\ShenonTest\ShenonTest.cpp(129,1): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\AISDLAB2b\ShenonTest\ShenonTest.cpp(165,1): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\AISDLAB2b\ShenonTest\ShenonTest.cpp(195,1): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+     Создается библиотека C:\Users\User\source\repos\AISDLAB2b\x64\Debug\ShenonTest.lib и объект C:\Users\User\source\repos\AISDLAB2b\x64\Debug\ShenonTest.exp
+  ShenonTest.vcxproj -> C:\Users\User\source\repos\AISDLAB2b\x64\Debug\ShenonTest.dll
